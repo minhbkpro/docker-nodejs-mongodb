@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  node:
+    image: node
+    container_name: node
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 8000:3000
+    command: "npm start"
